@@ -2,9 +2,9 @@ import json
 import asyncio
 import subprocess
 import pynvim
-from pathlib import Path
+import os
 
-REGISTRY_PATH = Path("~/Documents/temp/registries.json").expanduser()
+REGISTRY_PATH = os.path.join(os.getcwd(), "registries.json")
 
 class NvimHandler:
     def __init__(self):
