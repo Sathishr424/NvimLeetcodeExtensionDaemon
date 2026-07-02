@@ -1,0 +1,18 @@
+{
+  "313643": {
+    "cwd": "/home/sathish/Documents/temp/LeetcodeCompanionNvim",
+    "pane": "%11",
+    "tty": "/dev/pts/6",
+    "pid": 313643,
+    "socket": "/run/user/1000/nvim.313643.0",
+    "session": "0"
+  },
+  "342111": {
+    "pane": "%8",
+    "pid": 342111,
+    "tty": "/dev/pts/8",
+    "socket": "/run/user/1000/nvim.342111.0",
+    "cwd": "/home/sathish/Documents/temp",
+    "session": "0"
+  }
+}
