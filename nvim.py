@@ -41,19 +41,15 @@ class NvimHandler:
             return json.load(f)
 
     def find_nvim(self, registry, pane):
-        for info in registry.values():
-            if info["pane"] == pane:
-                return info
+        if pane in registry: return registry[pane]
         return None
 
-    async def send(self, data):
+    async def send(self, registry, data):
         pane = self.get_active_pane()
 
         if pane is None:
             print("No active tmux pane found.")
             return
-
-        registry = self.load_registry()
 
         info = self.find_nvim(registry, pane)
         if info is None:

@@ -3,8 +3,9 @@ import subprocess
 from nvim import NvimHandler
 
 class Server:
-    def __init__(self, port=8765):
-        self.port = port
+    def __init__(self, registry={}):
+        self.registry = registry
+        self.port = 8765
 
     def _kill_process_on_port(self, port: int):
         try:
@@ -29,7 +30,7 @@ class Server:
     async def open_problem(self, request):
         try:
             data = await request.json()
-            await NvimHandler().send(data)
+            await NvimHandler().send(self.registry, data)
             return web.Response(text="ok")
         except Exception as e:
             print("Error response:", e)
