@@ -46,6 +46,12 @@ class Server:
         await runner.setup()
 
         site = web.TCPSite(runner, "127.0.0.1", self.port)
-        await site.start()
+        try:
+            await site.start()
+        except OSError as e:
+            if e.errno == 98:
+                print("Server is already running.")
+                return
+            raise
 
         print(f"HTTP server listening on {self.port}")

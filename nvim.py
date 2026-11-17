@@ -66,6 +66,6 @@ class NvimHandler:
         # nvim.command("echo " + str(data))
         # nvim.command("normal! G")
         nvim.exec_lua(
-            "require('leetcode.commands').createFile(...)",
+            "require('leetcode-companion.commands').createFile(...)",
             data,
         )
